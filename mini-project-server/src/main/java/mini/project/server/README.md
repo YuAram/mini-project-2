@@ -1,0 +1,1 @@
+# /src/main/java/mini/project/server 폴더
