@@ -8,6 +8,6 @@ public class SignOutCommand implements Command {
 
   @Override
   public void execute(PrintWriter out, BufferedReader in) {
-    out.println("signout!");
+    out.println("[signout]");
   }
 }

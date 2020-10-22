@@ -20,7 +20,9 @@ public class MemberAddCommand implements Command {
 
     try {
       Member member = new Member();
-      member.setNo(Prompt.inputInt("번호? ", out, in));
+      //member.setNo(Prompt.inputInt("번호? ", out, in));
+      member.setId(Prompt.inputString("ID? ", out, in));
+      member.setPassword(Prompt.inputString("비밀번호? ", out, in));
       member.setName(Prompt.inputString("이름? ", out, in));
   
    

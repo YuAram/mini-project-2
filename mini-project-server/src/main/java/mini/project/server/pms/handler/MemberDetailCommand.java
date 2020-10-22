@@ -26,6 +26,7 @@ public class MemberDetailCommand implements Command {
         return;
       }
 
+      out.printf("ID: %s\n", member.getId());
       out.printf("이름: %s\n", member.getName());
    
 
