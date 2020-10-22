@@ -1,4 +1,4 @@
-package com.eomcs.pms;
+package mini.project.server.pms;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -10,11 +10,11 @@ import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.List;
 import java.util.Map;
-import com.eomcs.context.ApplicationContextListener;
-import com.eomcs.pms.handler.Command;
-import com.eomcs.pms.listener.AppInitListener;
-import com.eomcs.pms.listener.DataHandlerListener;
-import com.eomcs.pms.listener.RequestMappingListener;
+import mini.project.server.context.ApplicationContextListener;
+import mini.project.server.pms.handler.Command;
+import mini.project.server.pms.listener.AppInitListener;
+import mini.project.server.pms.listener.DataHandlerListener;
+import mini.project.server.pms.listener.RequestMappingListener;
 
 public class ServerApp {
 

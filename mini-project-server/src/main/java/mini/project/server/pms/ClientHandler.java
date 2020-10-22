@@ -1,4 +1,4 @@
-package com.eomcs.pms;
+package mini.project.server.pms;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

@@ -1,10 +1,10 @@
-package com.eomcs.pms;
+package mini.project.client.pms;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
-import com.eomcs.util.Prompt;
+import mini.project.client.util.Prompt;
 
 public class ClientApp {
   static String host;

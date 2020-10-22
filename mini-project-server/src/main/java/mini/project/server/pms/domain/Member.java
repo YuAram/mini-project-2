@@ -1,4 +1,4 @@
-package com.eomcs.pms.domain;
+package mini.project.server.pms.domain;
 
 import java.sql.Date;
 

@@ -1,10 +1,10 @@
-package com.eomcs.pms.handler;
+package mini.project.server.pms.handler;
 
 import java.io.BufferedReader;
 import java.io.PrintWriter;
 import java.util.Iterator;
 import java.util.List;
-import com.eomcs.pms.domain.Member;
+import mini.project.server.pms.domain.Member;
 
 public class MemberListCommand implements Command {
 
