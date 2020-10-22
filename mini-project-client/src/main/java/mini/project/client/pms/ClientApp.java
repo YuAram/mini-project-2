@@ -45,7 +45,6 @@ public class ClientApp {
       out.flush();
 
       receiveResponse(out, in);
-
       if (message.equalsIgnoreCase("/signin")) {
         String LoginInfo = in.readLine();
         if(LoginInfo != null) {
@@ -55,6 +54,16 @@ public class ClientApp {
           state.setSignInState(Boolean.parseBoolean(LoginArray[2]));
         }
       }
+
+      if (message.equalsIgnoreCase("/signout")) {
+        String LogoutCheck = in.readLine();
+        if(LogoutCheck != null) {
+          state.setNo(-1);
+          state.setName("none");
+          state.setSignInState(false);
+        }
+      }
+
       if (message.equalsIgnoreCase("stop")) {
         stop = true;
       }

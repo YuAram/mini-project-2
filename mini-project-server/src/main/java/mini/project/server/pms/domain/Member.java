@@ -7,22 +7,21 @@ public class Member {
   private String id;
   private String password;
   private String name;
-  private boolean signInState;
-  
+
   public int getNo() {
     return no;
   }
   public void setNo(int no) {
     this.no = no;
   }
-  
+
   public String getId() {
     return id;
   }
   public void setId(String id) {
     this.id = id;
   }
-  
+
   public String getPassword() {
     return password;
   }
@@ -35,13 +34,5 @@ public class Member {
   }
   public void setName(String name) {
     this.name = name;
-  }
-  
-  public boolean isSignInState() {
-    return signInState;
-  }
-  
-  public void setSignInState(boolean signInState) {
-    this.signInState = signInState;
   }
 }
