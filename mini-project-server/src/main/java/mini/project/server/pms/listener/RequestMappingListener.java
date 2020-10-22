@@ -3,9 +3,10 @@ package mini.project.server.pms.listener;
 import java.util.List;
 import java.util.Map;
 import mini.project.server.context.ApplicationContextListener;
+import mini.project.server.pms.domain.Chatting;
 import mini.project.server.pms.domain.Member;
 import mini.project.server.pms.handler.CalculatorCommand;
-import mini.project.server.pms.handler.ChattingCommand;
+import mini.project.server.pms.handler.ChatCommand;
 import mini.project.server.pms.handler.HelpCommand;
 import mini.project.server.pms.handler.MemberAddCommand;
 import mini.project.server.pms.handler.MemberDeleteCommand;
@@ -22,10 +23,10 @@ public class RequestMappingListener implements ApplicationContextListener {
   @Override
   public void contextInitialized(Map<String,Object> context) {
     // 옵저버가 작업한 결과를 맵에서 꺼낸다.
+    List<Chatting> chattingList = (List<Chatting>) context.get("chattingList");
     List<Member> memberList = (List<Member>) context.get("memberList");
 
-    context.put("/chat", new ChattingCommand());
-
+    context.put("/chat", new ChatCommand(chattingList));
     MemberListCommand memberListCommand = new MemberListCommand(memberList);
     context.put("/member/detail", new MemberDetailCommand(memberList));
     context.put("/member/add", new MemberAddCommand(memberList));

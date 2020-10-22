@@ -98,8 +98,7 @@ public class ServerApp {
 
       // 클라이언트가 보낸 요청을 읽는다.
       String request = in.readLine();
-      out.println(request);
-       System.out.println(request);
+
       if (request.equalsIgnoreCase("stop")) {
         stop = true; // 서버의 상태를 멈추라는 의미로 true로 설정한다.
         out.println("서버를 종료하는 중 입니다!");

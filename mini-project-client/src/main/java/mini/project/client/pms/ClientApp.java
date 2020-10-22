@@ -64,11 +64,6 @@ public class ClientApp {
         }
       }
 
-      if (message.equalsIgnoreCase("/chat")) {
-        String talk = in.readLine();
-        System.out.println(talk+"!!!@");
-      }
-
       if (message.equalsIgnoreCase("stop")) {
         stop = true;
       }

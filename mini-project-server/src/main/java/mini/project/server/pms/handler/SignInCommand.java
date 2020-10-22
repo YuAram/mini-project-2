@@ -33,7 +33,7 @@ public class SignInCommand implements Command {
         return;
       }
 
-      out.println("로그인 정보가 맞습니다.");
+      out.println("로그인 되었습니다.");
 
       out.println();
       out.printf("%d,%s,%b",member.getNo(), member.getName(), true);
@@ -52,15 +52,5 @@ public class SignInCommand implements Command {
       }
     }
     return null;
-  }
-
-  private boolean checkByPassword(String password) {
-    for (int i = 0; i < memberList.size(); i++) {
-      Member member = memberList.get(i);
-      if (member.getPassword().equals(password)) {
-        return true;
-      }
-    }
-    return false;
   }
 }
