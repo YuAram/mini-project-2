@@ -28,7 +28,7 @@ public class SignInCommand implements Command {
         out.println("아이디가 틀립니다.");
         return;
       }
-      if (checkByPassword(password) == false) {
+      if (member.getPassword().equals(password) == false) {
         out.println("비밀번호가 틀립니다.");
         return;
       }
