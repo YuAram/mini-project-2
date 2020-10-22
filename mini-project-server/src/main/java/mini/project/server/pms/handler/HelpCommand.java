@@ -8,6 +8,6 @@ public class HelpCommand implements Command {
 
   @Override
   public void execute(PrintWriter out, BufferedReader in) {
-    out.println("안녕하세요!");
+    out.println("[HELP]");
   }
 }

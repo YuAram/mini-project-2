@@ -41,8 +41,8 @@ public class RequestMappingListener implements ApplicationContextListener {
 
     context.put("/help", new HelpCommand());
     
-    context.put("/hello", new HelloCommand());
-    context.put("/calc", new CalculatorCommand());
+    //context.put("/hello", new HelloCommand());
+    //context.put("/calc", new CalculatorCommand());
   }
 
   @Override
