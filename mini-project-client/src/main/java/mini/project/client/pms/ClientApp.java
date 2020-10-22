@@ -4,12 +4,14 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
+import mini.project.client.pms.domain.State;
 import mini.project.client.util.Prompt;
 
 public class ClientApp {
   static String host;
   static int port;
-
+  static State state = new State();
+  
   public static void main(String[] args) {
     if (args.length != 2) {
       System.out.println("프로그램 사용법:");
@@ -18,9 +20,8 @@ public class ClientApp {
     }
     host = args[0];
     port = Integer.parseInt(args[1]);
-
     while (true) {
-      String input = Prompt.inputString("명령(none)> ");
+      String input = Prompt.inputString("명령(" +state.getName()+ ")> "); // "명령(none)> "
       if (input.equalsIgnoreCase("quit"))
         break;
 
@@ -45,8 +46,13 @@ public class ClientApp {
 
       receiveResponse(out, in);
       
-      System.out.println(in.readLine());
-
+      if (message.equalsIgnoreCase("/signin")) {
+        String LoginInfo = in.readLine();
+        String[] LoginArray = LoginInfo.split(",");
+        state.setNo(Integer.parseInt(LoginArray[0]));
+        state.setName(LoginArray[1]);
+        state.setSignInState(Boolean.parseBoolean(LoginArray[2]));
+      }
       if (message.equalsIgnoreCase("stop")) {
         stop = true;
       }

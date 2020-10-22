@@ -36,7 +36,9 @@ public class SignInCommand implements Command {
       out.println("로그인 정보가 맞습니다.");
       member.setSignInState(true);
       
-      out.printf("%d,%s,%b\n",member.getNo(), member.getName(), member.isSignInState());
+      out.println();
+      out.printf("%d,%s,%b",member.getNo(), member.getName(), member.isSignInState());
+      out.flush();
       
     } catch (Exception e) {
       out.printf("작업 처리 중 오류 발생 !- %s\n", e.getMessage());
