@@ -7,7 +7,7 @@ public class Member {
   private String id;
   private String password;
   private String name;
-  
+  private boolean signInState;
   
   public int getNo() {
     return no;
@@ -35,5 +35,13 @@ public class Member {
   }
   public void setName(String name) {
     this.name = name;
+  }
+  
+  public boolean isSignInState() {
+    return signInState;
+  }
+  
+  public void setSignInState(boolean signInState) {
+    this.signInState = signInState;
   }
 }

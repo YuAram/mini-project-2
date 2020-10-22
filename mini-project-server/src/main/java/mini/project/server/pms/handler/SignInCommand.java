@@ -20,30 +20,46 @@ public class SignInCommand implements Command {
     out.println("[signin]");
     
     try {
-      int no = Prompt.inputInt("번호? ", out, in);
-      Member member = findByNo(no);
-
+      String id = Prompt.inputString("ID? ", out, in);
+      String password = Prompt.inputString("PASSWORD? ", out, in);
+      
+      Member member = findById(id);
       if (member == null) {
-        out.println("해당 번호의 회원이 없습니다.");
+        out.println("아이디가 틀립니다.");
         return;
       }
-
-      out.printf("ID: %s\n", member.getId());
-      out.printf("이름: %s\n", member.getName());
-  
-   
+      if (checkByPassword(password) == false) {
+        out.println("비밀번호가 틀립니다.");
+        return;
+      }
+      
+      out.println("로그인 정보가 맞습니다.");
+      member.setSignInState(true);
+      
+      out.printf("%d,%s,%b\n",member.getNo(), member.getName(), member.isSignInState());
+      
     } catch (Exception e) {
       out.printf("작업 처리 중 오류 발생 !- %s\n", e.getMessage());
     }
   }
   
-  private Member findByNo(int no) {
+  private Member findById(String id) {
     for (int i = 0; i < memberList.size(); i++) {
       Member member = memberList.get(i);
-      if (member.getNo() == no) {
+      if (member.getId().equalsIgnoreCase(id)) {
         return member;
       }
     }
     return null;
+  }
+  
+  private boolean checkByPassword(String password) {
+    for (int i = 0; i < memberList.size(); i++) {
+      Member member = memberList.get(i);
+      if (member.getPassword().equals(password)) {
+        return true;
+      }
+    }
+    return false;
   }
 }

@@ -44,6 +44,8 @@ public class ClientApp {
       out.flush();
 
       receiveResponse(out, in);
+      
+      System.out.println(in.readLine());
 
       if (message.equalsIgnoreCase("stop")) {
         stop = true;
