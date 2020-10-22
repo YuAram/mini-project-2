@@ -27,10 +27,8 @@ public class MemberDetailCommand implements Command {
       }
 
       out.printf("이름: %s\n", member.getName());
-      out.printf("이메일: %s\n", member.getEmail());
-      out.printf("사진: %s\n", member.getPhoto());
-      out.printf("전화: %s\n", member.getTel());
-      out.printf("등록일: %s\n", member.getRegisteredDate());
+   
+
     } catch (Exception e) {
       out.printf("작업 처리 중 오류 발생 !- %s\n", e.getMessage());
     }
