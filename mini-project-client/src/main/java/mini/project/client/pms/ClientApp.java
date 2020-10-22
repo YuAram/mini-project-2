@@ -11,7 +11,7 @@ public class ClientApp {
   static String host;
   static int port;
   static State state = new State();
-  
+
   public static void main(String[] args) {
     if (args.length != 2) {
       System.out.println("프로그램 사용법:");
@@ -45,13 +45,15 @@ public class ClientApp {
       out.flush();
 
       receiveResponse(out, in);
-      
+
       if (message.equalsIgnoreCase("/signin")) {
         String LoginInfo = in.readLine();
-        String[] LoginArray = LoginInfo.split(",");
-        state.setNo(Integer.parseInt(LoginArray[0]));
-        state.setName(LoginArray[1]);
-        state.setSignInState(Boolean.parseBoolean(LoginArray[2]));
+        if(LoginInfo != null) {
+          String[] LoginArray = LoginInfo.split(",");
+          state.setNo(Integer.parseInt(LoginArray[0]));
+          state.setName(LoginArray[1]);
+          state.setSignInState(Boolean.parseBoolean(LoginArray[2]));
+        }
       }
       if (message.equalsIgnoreCase("stop")) {
         stop = true;

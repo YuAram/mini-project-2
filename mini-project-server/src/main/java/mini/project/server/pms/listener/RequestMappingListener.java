@@ -24,20 +24,20 @@ public class RequestMappingListener implements ApplicationContextListener {
     // 옵저버가 작업한 결과를 맵에서 꺼낸다.
     List<Member> memberList = (List<Member>) context.get("memberList");
 
-    context.put("/chatting", new ChattingCommand());
-    
+    context.put("/chat", new ChattingCommand());
+
     MemberListCommand memberListCommand = new MemberListCommand(memberList);
     context.put("/member/detail", new MemberDetailCommand(memberList));
     context.put("/member/add", new MemberAddCommand(memberList));
     context.put("/member/list", memberListCommand);
     context.put("/member/update", new MemberUpdateCommand(memberList));
     context.put("/member/delete", new MemberDeleteCommand(memberList));
-    
+
     context.put("/signin", new SignInCommand(memberList));
     context.put("/signout", new SignOutCommand());    
 
     context.put("/help", new HelpCommand());
-    
+
     //context.put("/hello", new HelloCommand());
     context.put("/calc", new CalculatorCommand());
   }
