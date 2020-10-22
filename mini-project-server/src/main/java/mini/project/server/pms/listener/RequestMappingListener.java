@@ -5,7 +5,10 @@ import java.util.Map;
 import mini.project.server.context.ApplicationContextListener;
 import mini.project.server.pms.domain.Member;
 import mini.project.server.pms.handler.CalculatorCommand;
+import mini.project.server.pms.handler.ChattingStartCommand;
+import mini.project.server.pms.handler.ChattingStopCommand;
 import mini.project.server.pms.handler.HelloCommand;
+import mini.project.server.pms.handler.HelpCommand;
 import mini.project.server.pms.handler.MemberAddCommand;
 import mini.project.server.pms.handler.MemberDeleteCommand;
 import mini.project.server.pms.handler.MemberDetailCommand;
@@ -21,16 +24,22 @@ public class RequestMappingListener implements ApplicationContextListener {
     // 옵저버가 작업한 결과를 맵에서 꺼낸다.
     List<Member> memberList = (List<Member>) context.get("memberList");
 
-
+    context.put("/chatting/start", new ChattingStartCommand());
+    context.put("/chatting/stop", new ChattingStopCommand());
+    
     MemberListCommand memberListCommand = new MemberListCommand(memberList);
+    context.put("/member/my", new MemberMyCommand(memberList));
     context.put("/member/add", new MemberAddCommand(memberList));
     context.put("/member/list", memberListCommand);
-    context.put("/member/detail", new MemberDetailCommand(memberList));
     context.put("/member/update", new MemberUpdateCommand(memberList));
     context.put("/member/delete", new MemberDeleteCommand(memberList));
+    
+    context.put("/signin", new SignInCommand(memberList));
+    context.put("/signout", new SignOutCommand(memberList));    
 
+    context.put("/help", new HelpCommand());
+    
     context.put("/hello", new HelloCommand());
-
     context.put("/calc", new CalculatorCommand());
   }
 
