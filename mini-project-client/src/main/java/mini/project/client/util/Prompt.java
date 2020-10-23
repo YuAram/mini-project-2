@@ -8,7 +8,7 @@ public class Prompt {
 
   // 다른 패키지에서 메서드를 호출할 수 있도록 사용 범위를 public 으로 공개한다.
   public static String inputString(String title) {
-    System.out.print(title);
+    System.out.println(title);
     return keyboardScan.nextLine();
   }
 
