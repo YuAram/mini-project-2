@@ -20,7 +20,7 @@ public class Prompt {
       BufferedReader in) throws Exception {
     // 클라이언트로 출력할 때는 제목 다음에 "!{}!" 문자열을 보내
     // 클라이언트가 사용자로부터 값을 입력 받아 다시 서버에 보내도록 요청한다.
-    out.println(title); // 클라이언트가 출력할 프롬프트 제목
+    out.print(title); // 클라이언트가 출력할 프롬프트 제목
     out.println("!{}!"); // 클라이언트에게 값을 보내라는 요청
     out.flush(); // 주의 출력하면 버퍼에 쌓인다. 서버로 보내려면 호출해야함.
     return in.readLine(); // 클라이언트가 보낸 값을 읽기
