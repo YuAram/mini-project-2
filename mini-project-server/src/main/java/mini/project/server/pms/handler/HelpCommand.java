@@ -10,18 +10,19 @@ public class HelpCommand implements Command {
   public void execute(PrintWriter out, BufferedReader in) {
     out.println("[HELP]");
 
-    out.println("*** SignIn/Out ***");
-    out.println(" - 로그인 : /signin");
-    out.println(" - 로그아웃 : /signout");
+    out.println("************** SignIn/Out ***************");
+    out.println("*  로그인:/signin\t\t\t*");
+    out.println("*  로그아웃 :/signout\t\t\t*");
 
-    out.println("*** Member ***");
-    out.println(" - 현재 사용자 정보 : /member/detail");
-    out.println(" - 사용자 목록 확인 : /member/list");
-    out.println(" - 사용자 정보 수정 : /member/update");
-    out.println(" - 사용자 추가 : /member/add");
-    out.println(" - 사용자 삭제 : /member/delete");
+    out.println("**************   Member   ***************");
+    out.println("*  현재 사용자 정보: /member/detail\t*");
+    out.println("*  사용자 목록 확인: /member/list\t*");
+    out.println("*  사용자 정보 수정: /member/update\t*");
+    out.println("*  사용자 추가: /member/add\t\t*");
+    out.println("*  사용자 삭제: /member/delete\t\t*");
 
-    out.println("*** Chatting ***");
-    out.println(" - 채팅 시작 : /chat");
+    out.println("**************  Chatting  ***************");
+    out.println("*  채팅 시작 : /chat\t\t\t*");
+    out.println("*****************************************");
   }
 }

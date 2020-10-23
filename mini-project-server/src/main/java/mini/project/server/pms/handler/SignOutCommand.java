@@ -9,8 +9,8 @@ public class SignOutCommand implements Command {
 
   @Override
   public void execute(PrintWriter out, BufferedReader in) {
+    out.println("[signout]");
     try {
-
       String response = Prompt.inputString("정말 로그아웃하시겠습니까?(y/N) ", out, in);
       if (!response.equalsIgnoreCase("y")) {
         out.println("로그아웃을 취소하였습니다.");

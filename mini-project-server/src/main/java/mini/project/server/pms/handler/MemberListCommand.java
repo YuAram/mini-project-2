@@ -21,13 +21,14 @@ public class MemberListCommand implements Command {
     // 전체 목록을 조회할 때 `Iterator` 객체를 사용한다.
     // 만약 목록의 일부만 조회하면다면 인덱스를 직접 다루는 이전 방식을 사용해야 한다.
     Iterator<Member> iterator = memberList.iterator();
-
+    
+    out.println("No / ID / Name");
     while (iterator.hasNext()) {
       Member member = iterator.next();
       out.printf("%d, %s, %s\n",
           member.getNo(),
-          member.getName(),
-          member.getId());
+          member.getId(),
+          member.getName());
     }
   }
 

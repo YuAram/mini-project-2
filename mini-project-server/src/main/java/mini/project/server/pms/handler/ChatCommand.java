@@ -3,6 +3,7 @@ package mini.project.server.pms.handler;
 import java.io.BufferedReader;
 import java.io.PrintWriter;
 import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.Iterator;
 import java.util.List;
 import mini.project.server.pms.domain.Chatting;
@@ -20,6 +21,8 @@ public class ChatCommand implements Command {
   @Override
   public void execute(PrintWriter out, BufferedReader in) {
     out.println("[Chat]");
+    
+    SimpleDateFormat sdfNow = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     try {
       while (true) {
         Chatting chatting = new Chatting();
@@ -27,17 +30,19 @@ public class ChatCommand implements Command {
         if(message.equalsIgnoreCase("bye")) {
           break;
         }
+        long now = System.currentTimeMillis();
+        
         chatting.setContent(message);
-        chatting.setRegisteredDate(new Date(System.currentTimeMillis()));
+        chatting.setRegisteredDate(sdfNow.format(new Date(now)));
 
         chattingList.add(chatting);
 
         Iterator<Chatting> iterator = chattingList.iterator();
 
+
         while (iterator.hasNext()) {
           chatting = iterator.next();
-          out.printf("[%s] : %s\t_%s\n",
-              "[none]",
+          out.printf("talk : %-30s\t%s\n",
               chatting.getContent(),
               chatting.getRegisteredDate());
         }

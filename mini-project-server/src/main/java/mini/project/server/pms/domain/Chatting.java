@@ -6,7 +6,7 @@ import java.sql.Date;
 //
 public class Chatting {
   private String content;
-  private Date registeredDate;
+  private String registeredDate;
 
   public String getContent() {
     return content;
@@ -14,10 +14,10 @@ public class Chatting {
   public void setContent(String content) {
     this.content = content;
   }
-  public Date getRegisteredDate() {
+  public String getRegisteredDate() {
     return registeredDate;
   }
-  public void setRegisteredDate(Date registeredDate) {
+  public void setRegisteredDate(String registeredDate) {
     this.registeredDate = registeredDate;
   }
 }

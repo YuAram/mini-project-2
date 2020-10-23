@@ -5,7 +5,6 @@ import java.util.Map;
 import mini.project.server.context.ApplicationContextListener;
 import mini.project.server.pms.domain.Chatting;
 import mini.project.server.pms.domain.Member;
-import mini.project.server.pms.handler.CalculatorCommand;
 import mini.project.server.pms.handler.ChatCommand;
 import mini.project.server.pms.handler.HelpCommand;
 import mini.project.server.pms.handler.MemberAddCommand;
@@ -38,9 +37,6 @@ public class RequestMappingListener implements ApplicationContextListener {
     context.put("/signout", new SignOutCommand());    
 
     context.put("/help", new HelpCommand());
-
-    //context.put("/hello", new HelloCommand());
-    context.put("/calc", new CalculatorCommand());
   }
 
   @Override
