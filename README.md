@@ -1,6 +1,22 @@
 # 채팅 프로그램 mini-project
 - **bitcamp-200713 2차 미니 프로젝트** (20201022 ~ 20201023)
 
+## Control
+```
+ - /signin : 로그인
+ - /signout : 로그아웃
+ 
+ - member/detatil : 현재 사용자 정보
+ - member/list : 사용자 목록 확인
+ - member/update : 사용자 정보 수정
+ - member/add : 사용자 추가
+ - member/delete : 사용자 삭제
+ 
+ - /chat : 채팅 시작
+ 
+ - /help : 도움말
+```
+
 ## mini-project-server
 
 ### mini.project.server.context
