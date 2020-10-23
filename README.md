@@ -1,4 +1,4 @@
-# 채팅 프로그램 mini-project
+# 채팅 프로그램 [mini-project]
 - **bitcamp-200713 2차 미니 프로젝트** (20201022 ~ 20201023)
 
 ## Control
